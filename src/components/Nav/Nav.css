@@ -1,0 +1,6 @@
+.nav-container{
+    padding: 3px;
+    display: flex;
+    justify-content: right;
+    border: 2px solid blueviolet;
+}
