@@ -3,4 +3,14 @@
     display: flex;
     justify-content: right;
     border: 2px solid blueviolet;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nav-onSearch{
+
+}
+
+.nav-button{
+
 }

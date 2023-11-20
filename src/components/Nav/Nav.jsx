@@ -5,12 +5,14 @@ import { Link } from "react-router-dom";
 export default function Nav({onSearch}){
     return(
         <div className="nav-container">
-            <SearchBar onSearch={onSearch} />
+            <div className="nav-onSearch">
+                <SearchBar onSearch={onSearch} />
+            </div>
             <Link to="/about">
-                <button>About</button>
+                <button className="nav-button nav-button-about">About</button>
             </Link>
             <Link to="/home">
-                <button>Home</button>
+                <button className="nav-button nav-button-home">Home</button>
             </Link>
         </div>
     )

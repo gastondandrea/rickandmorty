@@ -21,12 +21,11 @@ function App() {
       if (characterId.length) {
           return alert(`${characterId[0].name} ya existe!`)
       }
-
       fetch(`${URL}/${id}`)
-              .then(res =>res.json() )
+              .then(res =>res.json())
       .then(character => {
         if (character.name) {
-          setCharacters(oldChars => [...oldChars, character])
+          setCharacters(oldChars => [character, ...oldChars])
         } else {
           window.alert('¡No hay personajes con este ID!, el mínimo es de 1 y el máximo es el 826 :)')
           }
