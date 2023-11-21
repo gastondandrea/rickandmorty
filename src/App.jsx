@@ -37,9 +37,16 @@ function App() {
          setCharacters(filterCharacters);
    }
 
+   const randomPersonaje = () =>{
+      const numRamdom = Math.floor(Math.random() * (826 - 1 + 1)) + 1;
+      if(characters.includes(numRamdom))return;
+      onSearch(numRamdom);
+   }
+
+
    return (
       <div className='App'>
-         <Nav onSearch={onSearch}/>
+         <Nav onSearch={onSearch} randomPersonaje = {randomPersonaje} />
          <Routes>
             <Route path="/home" element={<Cards characters={characters} onClose = {onClose} />}>
             </Route>

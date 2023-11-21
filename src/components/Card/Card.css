@@ -1,4 +1,5 @@
 .card-container{
     margin: 5px;
-    border:  solid 2px violet ;
+    background-color: #CEF6C6;
+    border-radius: 0.5em;
 }
