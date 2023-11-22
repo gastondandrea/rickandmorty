@@ -39,10 +39,14 @@ function App() {
 
    const randomPersonaje = () =>{
       const numRamdom = Math.floor(Math.random() * (826 - 1 + 1)) + 1;
-      if(characters.includes(numRamdom))return;
+      const charactersId = characters.map((char)=>{
+         return char.id;
+      })
+      if(charactersId.includes(numRamdom)){
+         return
+      }
       onSearch(numRamdom);
    }
-
 
    return (
       <div className='App'>

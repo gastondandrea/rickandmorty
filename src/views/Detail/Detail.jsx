@@ -24,10 +24,10 @@ export default function Detail({URL}){
     return(
         <div>
             <h1>{character.name}</h1>
-            <h3>{character.staus}</h3>
-            <h3>{character.species}</h3>
-            <h3>{character.gender}</h3>
-            <h3>{character.origin?.name}</h3>
+            <h3>Status: {character.status}</h3>
+            <h3>Species: {character.species}</h3>
+            <h3>Gender: {character.gender}</h3>
+            <h3>Origin: {character.origin?.name}</h3>
             <img src={character.image} alt={character.name} />
         </div>
     )

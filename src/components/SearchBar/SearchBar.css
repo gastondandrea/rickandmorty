@@ -4,24 +4,42 @@
     box-sizing: border-box;
 
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
 }
 
 .searchBar-input{
     border-radius: 0.5em;
     border: 0em;
-    width: 6em;
+    width: 11em;
+    height: 1.5em;
     text-align: center;
     font-size: 1.2em;
     color: #00AAC2;
     margin: 0em 0.25em;
 }
-
+.searchBar-buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5em;
+}
 
 .searchBar-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
-    background-color: #00AAC2;
+    background-color: hsl(187, 100%, 38%);
     width: 7em;
+    height: 1em;
     box-sizing: border-box;
     margin: 0em 0.25em;
 }
+
+
+.searchBar-button:hover{
+    background-color: #04c4dd;
+    border: none;
+}
+
+

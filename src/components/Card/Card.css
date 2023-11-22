@@ -1,5 +1,47 @@
 .card-container{
-    margin: 5px;
+    position: relative;
     background-color: #CEF6C6;
-    border-radius: 0.5em;
+    border-radius: 1em;
+    max-width: 18.75em ;
+    margin: 1em 1em 0 0;
+}
+
+.card-button{
+    position: absolute;
+    right: 0;
+}
+
+.card-button button{
+    width: 3em;
+    text-align: center;
+}
+
+.card-titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-titulo a{
+    text-decoration: none;
+}
+
+.card-titulo a h2{
+    margin: 0;
+    padding: 0.2em;
+    font-family: Schwifty;
+    font-size: 1.8em;
+    color: #04c4dd;
+}
+
+.card-descripcion h4{
+    margin: 0;
+    padding: 0.2em;
+    font-size: 1em;
+    color: #04c4dd;
+}
+
+
+.card-img img{
+    border-radius: 1em 1em 0 0;
 }
