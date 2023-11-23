@@ -1,0 +1,92 @@
+.form-container{
+    background-image: url('../../img/fondo-form.jpg');
+    border-radius: 10px;
+    width: 544px;
+    height: 780px;
+    object-fit: cover;
+    margin: 32px auto;
+    position: relative;
+    font-family: Schwifty;
+    font-size: 38px;
+}
+
+
+.form-container-transparente{
+    position: relative;
+    top: 135px;
+    margin: 0 auto;
+    background-color:rgba(255, 255, 255, 0.63);
+    max-width: 380px;
+    min-height: 360px;
+    max-height: 360px;
+}
+
+.form-email{
+    position: relative;
+    top: 20px;
+}
+.form-password{
+    position: relative;
+    top: 30px;
+}
+
+.form-email label{
+    position: relative;
+    right: 90px;
+
+}
+.form-password label{
+    position: relative;
+    right: 50px;
+}
+
+.form-email input{
+    display: block;
+    width: 270px;
+    height: 40px;
+    margin: 0 auto;
+    border: none;
+    position: relative;
+    top: 10px;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+}
+
+.form-password input{
+    display: block;
+    width: 270px;
+    height: 40px;
+    margin: 0 auto;
+    border: none;
+    position: relative;
+    top: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+.form-button-sumit{
+    width: 120px;
+    background-color: #ffffff;
+    font-family: Schwifty;
+    font-size: 24px;
+    height: 50px;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    top: 75px;
+}
+
+
+span{
+    font-family: Arial, Helvetica, sans-serif;
+    top: 105px;
+    right: 60px;
+    position: absolute;
+    font-size: 16px;
+}
+
+
+

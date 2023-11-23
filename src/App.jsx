@@ -5,15 +5,20 @@ import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav.jsx';
 import About from './views/About/About.jsx';
 import Detail from './views/Detail/Detail.jsx';
+import Form from './views/Form/Form.jsx';
 
-import {Routes, Route} from 'react-router-dom';
-
+import {Routes, Route, useLocation} from 'react-router-dom';
 
 function App() {
    // Estado App
    const [characters, setCharacters] = React.useState([]);
    // URL api 
    const URL = 'https://rickandmortyapi.com/api/character';
+
+
+
+   //useLocation
+   const location = useLocation()
 
    function onSearch(id) {
       //? Si hay 1 coincidencia entonces hay un repetido
@@ -50,13 +55,17 @@ function App() {
 
    return (
       <div className='App'>
-         <Nav onSearch={onSearch} randomPersonaje = {randomPersonaje} />
+         {
+            location.pathname === '/home' || location.pathname === '/about' || location.pathname.startsWith('/detail/') ? <Nav onSearch={onSearch} randomPersonaje = {randomPersonaje} /> : null
+         }
          <Routes>
             <Route path="/home" element={<Cards characters={characters} onClose = {onClose} />}>
             </Route>
             <Route path="/about" element={<About></About>}>               
             </Route>
             <Route path="/detail/:id" element={<Detail URL={URL}></Detail>}>               
+            </Route>
+            <Route path="/" element={<Form></Form>}>               
             </Route>
          </Routes>
       </div>
