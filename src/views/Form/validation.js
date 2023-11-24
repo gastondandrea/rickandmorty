@@ -1,5 +1,3 @@
-
-
 const validation = (userdata ,setError, errors) => {
     if(!userdata.email) setError({...errors, email: "Email vacio"});
     else{

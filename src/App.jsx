@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import React from 'react';
 import './App.css';
 
@@ -7,7 +8,7 @@ import About from './views/About/About.jsx';
 import Detail from './views/Detail/Detail.jsx';
 import Form from './views/Form/Form.jsx';
 
-import {Routes, Route, useLocation} from 'react-router-dom';
+import {Routes, Route, useLocation, useNavigate} from 'react-router-dom';
 
 function App() {
    // Estado App
@@ -15,10 +16,33 @@ function App() {
    // URL api 
    const URL = 'https://rickandmortyapi.com/api/character';
 
-
-
    //useLocation
-   const location = useLocation()
+   const location = useLocation();
+
+
+   // login
+   const navigate = useNavigate();
+   const [access, setAccess] = React.useState(false);
+   const EMAIL = 'ejemplo@gmail.com';
+   const PASSWORD = '1234';
+   
+   function login(userdata) {
+      if (userdata.password === PASSWORD && userdata.email === EMAIL) {
+         setAccess(true);
+         navigate('/home');
+      }else{
+         alert("Credenciales incorrectas");
+      }
+   }
+
+   function logout(){
+      setAccess(false);
+   }
+   // App.js
+   useEffect(() => {
+      !access && navigate('/');
+   }, [access]);
+
 
    function onSearch(id) {
       //? Si hay 1 coincidencia entonces hay un repetido
@@ -56,7 +80,7 @@ function App() {
    return (
       <div className='App'>
          {
-            location.pathname === '/home' || location.pathname === '/about' || location.pathname.startsWith('/detail/') ? <Nav onSearch={onSearch} randomPersonaje = {randomPersonaje} /> : null
+            location.pathname === '/home' || location.pathname === '/about' || location.pathname.startsWith('/detail/') ? <Nav onSearch={onSearch} randomPersonaje = {randomPersonaje} logout = {logout}/> : null
          }
          <Routes>
             <Route path="/home" element={<Cards characters={characters} onClose = {onClose} />}>
@@ -65,7 +89,8 @@ function App() {
             </Route>
             <Route path="/detail/:id" element={<Detail URL={URL}></Detail>}>               
             </Route>
-            <Route path="/" element={<Form></Form>}>               
+            {/* <Route path="/" element={<Form login={login}></Form>}> */}
+            <Route path="/" element={<Form login={login}></Form>}>          
             </Route>
          </Routes>
       </div>

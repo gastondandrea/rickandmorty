@@ -13,8 +13,6 @@
     font-size: 1.2em;
 }
 
-
-
 .card-descripcion{
     display: flex;
     flex-direction: column;
@@ -34,4 +32,3 @@
 .card-imagen img{
     border-radius: 50%;
 }
-
