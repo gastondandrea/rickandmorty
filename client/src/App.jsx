@@ -1,31 +1,35 @@
-import { useEffect } from 'react';
-import React from 'react';
 import './App.css';
-
-import Cards from './components/Cards/Cards.jsx';
-import Nav from './components/Nav/Nav.jsx';
+import React, { useEffect } from 'react';
+import {Routes, Route, useLocation, useNavigate} from 'react-router-dom';
 import About from './views/About/About.jsx';
+import Cards from './components/Cards/Cards.jsx';
 import Detail from './views/Detail/Detail.jsx';
 import Form from './views/Form/Form.jsx';
+import Nav from './components/Nav/Nav.jsx';
 
-import {Routes, Route, useLocation, useNavigate} from 'react-router-dom';
+// URL api 
+const URL = 'https://rickandmortyapi.com/api/character';
+
+//EMAIL y PASSWORD
+const EMAIL = 'ejemplo@gmail.com';
+const PASSWORD = '1234';
+
 
 function App() {
-   // Estado App
-   const [characters, setCharacters] = React.useState([]);
-   // URL api 
-   const URL = 'https://rickandmortyapi.com/api/character';
-
-   //useLocation
+   // Hooks
    const location = useLocation();
-
-
-   // login
    const navigate = useNavigate();
-   const [access, setAccess] = React.useState(false);
-   const EMAIL = 'ejemplo@gmail.com';
-   const PASSWORD = '1234';
    
+   // Estados App
+   const [characters, setCharacters] = React.useState([]);
+   const [access, setAccess] = React.useState(false);
+
+   // App.js
+   useEffect(() => {
+      !access && navigate('/');
+   }, [access]);
+   
+   // Función Login
    function login(userdata) {
       if (userdata.password === PASSWORD && userdata.email === EMAIL) {
          setAccess(true);
@@ -35,15 +39,12 @@ function App() {
       }
    }
 
+   // Función Logout
    function logout(){
       setAccess(false);
    }
-   // App.js
-   useEffect(() => {
-      !access && navigate('/');
-   }, [access]);
 
-
+   //Función onSearch
    function onSearch(id) {
       //? Si hay 1 coincidencia entonces hay un repetido
       const characterId = characters.filter(char => char.id === Number(id))
@@ -61,11 +62,13 @@ function App() {
       })
    }
 
-   const onClose =(id)=>{
+   //Función onClose
+   const onClose = (id)=>{
          const filterCharacters = characters.filter((character)=>character.id != id);
          setCharacters(filterCharacters);
    }
 
+   //Función randomPersonaje
    const randomPersonaje = () =>{
       const numRamdom = Math.floor(Math.random() * (826 - 1 + 1)) + 1;
       const charactersId = characters.map((char)=>{
@@ -80,7 +83,7 @@ function App() {
    return (
       <div className='App'>
          {
-            location.pathname === '/home' || location.pathname === '/about' || location.pathname.startsWith('/detail/') ? <Nav onSearch={onSearch} randomPersonaje = {randomPersonaje} logout = {logout}/> : null
+            location.pathname !== "/" ? <Nav onSearch={onSearch} randomPersonaje = {randomPersonaje} logout = {logout}/> : null
          }
          <Routes>
             <Route path="/home" element={<Cards characters={characters} onClose = {onClose} />}>
