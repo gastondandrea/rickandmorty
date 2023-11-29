@@ -8,7 +8,7 @@ import Form from './views/Form/Form.jsx';
 import Nav from './components/Nav/Nav.jsx';
 
 // URL api 
-const URL = 'https://rickandmortyapi.com/api/character';
+const URL = 'http://localhost:3001/rickandmorty/character/';
 
 //EMAIL y PASSWORD
 const EMAIL = 'ejemplo@gmail.com';
