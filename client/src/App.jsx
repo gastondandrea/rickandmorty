@@ -11,8 +11,8 @@ import Nav from './components/Nav/Nav.jsx';
 const URL = 'http://localhost:3001/rickandmorty/character/';
 
 //EMAIL y PASSWORD
-const EMAIL = 'ejemplo@gmail.com';
-const PASSWORD = '1234';
+const EMAIL = '1';
+const PASSWORD = '1';
 
 
 function App() {

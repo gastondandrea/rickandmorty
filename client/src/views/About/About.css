@@ -1,0 +1,38 @@
+.about-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D1EBCC;
+    max-width: 55em;
+    height: 30em;
+    border-radius: 1em;
+    margin-top: 1em;
+    margin: 1em auto;
+    font-family: Schwifty;
+    color: #006977;
+    font-size: 1.2em;
+}
+
+.card-descripcion{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.card-separador{
+    background-color: aliceblue;
+    width: 0.3em;
+    height: 30em;
+}
+
+.card-imagen{
+    width: 50%;
+}
+
+.card-imagen img{
+    border-radius: 50%;
+}
+
+.about-id{
+    position: relative;
+}

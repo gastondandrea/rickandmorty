@@ -22,20 +22,24 @@ export default function Detail({URL}){
     },[id]);
 
     return(
-        <div className="detail-container">
-            <div className="card-descripcion">
-                <div className="titulo">
+        <div className="detail detail-container">
+            <div className="detail card-descripcion">
+                <div className="detail titulo">
                     <h1>{character.name}</h1>
                 </div>
-                <div className="descripcion">
+
+                <div className="detail descripcion">
                     <h3>Status: {character.status}</h3>
                     <h3>Species: {character.species}</h3>
                     <h3>Gender: {character.gender}</h3>
                     <h3>Origin: {character.origin?.name}</h3>
+                </div>
+                <div className="detail detail-id">
+                    <h2>{character.id}</h2>
                 </div>               
             </div>
-            <div className="card-separador"></div>
-            <div className="card-imagen">
+            <div className="detail card-separador"></div>
+            <div className="detail card-imagen">
                 <img src={character.image} alt={character.name} />
             </div>
             

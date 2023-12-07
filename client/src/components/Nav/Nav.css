@@ -3,8 +3,9 @@
     justify-content: space-around;
     box-sizing: border-box;
     width: 100%;
-
-    margin-top: 1em ;
+    min-width: 300px;
+    height: 106px;
+    margin: 16px 0px;
     padding: 3px;
     background-color: #CEF6C6;
     border-radius: 0.5em;
@@ -31,27 +32,172 @@
     border: none;
 }
 
-
-
 .nav-button{
     background-color: #00AAC2;
     color: white;
-    width: 6em;
-    margin: 0em 0.25em;
+    width: 80px;
+    margin: 0px 4px;
     border: none;
 }
 
-.nav-button-random{
-    height: 2.6em;
-}
-
-.nav-logo-svg{
+.nav-logo{
     display: flex;
     align-items: center;
 }
-.nav-logo-svg h3{
+
+.nav-logo-svg{
+    width: 80px;
+}
+
+.nav-logo-texto{
     margin: 0;
     color: #00AAC2;
     font-family: Schwifty;
     font-size: 2.3em;
 }
+
+
+.nav-menu-res{
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    background-color: #CEF6C6;
+}
+
+.nav-onSearch-res-home{
+    
+}
+
+
+.nav-onSearch-res-about{
+    
+}
+
+.nav-onSearch-res input{
+    width: 100%;
+    height: 40px;
+    border-radius: 0px;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+}
+/* 
+.nav-buttons-res{
+    display: flex;
+    flex-direction: column;
+    
+} */
+
+.nav-button-res{
+    width: 100%;
+    background-color: #CEF6C6;
+    color: #FFFFFF;
+}
+
+.nav-button-res:hover{
+    background-color:#00AAC2;
+}
+
+
+
+
+
+
+.nav-hamburger{
+    display: none;
+    width: 100px;
+    height: 100px;
+    background: url("../../img/flecha-ampliar.png") no-repeat center;
+    position: relative;
+    background-size: 50px 50px;
+}
+
+
+
+.nav-logout{
+    position: fixed;
+    right: 3%;
+    top: 80vh;
+    width: 100px;
+    height:100px;
+    background: url("../../img/logout.png") no-repeat center;
+}
+
+.nav-logout:hover{
+    transition: 1s;
+    background: url("../../img/logout-rojo.png") no-repeat center;
+}
+
+
+
+@media (max-width: 900px) {
+
+    .nav-logo-svg{
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    .nav-buttons{
+        display: none;
+    }
+
+    .nav-logo-svg{
+        width: 60px;
+        display: block;
+    }
+    .nav-logo-texto{
+        display: block;
+        padding-left: 10px;
+    }
+
+    .nav-hamburger{
+        display: block;
+    }
+
+    .nav-onSearch{
+       display: none;
+    }
+
+
+   .nav-container{
+        justify-content: space-between;
+    }
+
+}
+
+@media (max-width: 610px) {
+
+    .nav-container{
+        height: 80px;
+    }
+    .nav-logo-texto{
+        font-size: 1.5em !important;
+    }
+
+    .nav-logo-svg{
+        display: none;
+    }
+
+    .nav-logout{
+        background-size: 70px 70px;
+    }
+
+    .nav-logout:hover{
+        background-size: 70px 70px;
+    }
+
+    .nav-hamburger{
+        background-size: 30px 30px;
+        height: 80px;
+    }
+
+   
+
+}
+
+
+
+
